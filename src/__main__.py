@@ -42,23 +42,18 @@ async def on_member_join(member: discord.Member):
     rules = rules.mention if rules is not None else "წესების არხში"
 
     em = discord.Embed(
-        title="მოგესალმებით Project RealLife-ში",
-        description="ეს არის სატესტო ტექსტი\n\n\n\n",
+        title="ახალი წევრი!",
+        description="{} შემოუერთდა ჩვენს სერვერს!\n\n\n\n".format(member.name),
         color=0x2D60CC,
     )
     em.add_field(
-        name="შექმნის თარიღი",
-        value=f"{member.created_at.date()}",
-    )
-    em.add_field(
-        name="გაეცანით წესებს",
+        name="გაეცანით დისქორდის წესებს",
         value=rules,
     )
 
     em.set_thumbnail(url=member.avatar.url)
 
     await welcome.send(
-        f"{member.mention}",
         embed=em
     )
 
