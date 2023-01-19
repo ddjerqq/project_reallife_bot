@@ -43,7 +43,7 @@ async def on_member_join(member: discord.Member):
 
     em = discord.Embed(
         title="ახალი წევრი!",
-        description="{} შემოუერთდა ჩვენს სერვერს!\n\n\n\n".format(member.name),
+        description="**{}** შემოუერთდა ჩვენს სერვერს!\n\n\n\n".format(member.name),
         color=0x2D60CC,
     )
     em.add_field(
