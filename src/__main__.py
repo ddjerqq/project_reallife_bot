@@ -1,11 +1,12 @@
 import os
 import discord
+from discord.ext import commands
 # from discord.ext.commands import Context as Ctx
 
 from dotenv import load_dotenv
 
 from src.client import Client
-
+from src.view import PersistentView
 
 load_dotenv()
 TOKEN = os.getenv("TOKEN")
@@ -56,6 +57,26 @@ async def on_member_join(member: discord.Member):
     await welcome.send(
         embed=em
     )
+
+
+@client.command(name="verification")
+@commands.has_permissions(administrator=True)
+async def verification(ctx: commands.Context):
+    """Starts a persistent view."""
+    # In order for a persistent view to be listened to, it needs to be sent to an actual message.
+    # Call this method once just to store it somewhere.
+    # In a more complicated program you might fetch the message_id from a database for use later.
+    # However, this is outside the scope of this simple example.
+
+    em = discord.Embed(
+        title="როლის მიღება",
+        description="იმისათვის რომ გამოიყენოთ ჩვენი სერვერი სრული ფუნქციონალი, გაიარეთ ვერიფიკაცია.",
+        color=0x2D60CC,
+    )
+    em.set_thumbnail(url="https://i.imgur.com/YctJGwP.png")
+
+    await ctx.send(embed=em, view=PersistentView())
+
 
 if __name__ == "__main__":
     client.run(TOKEN)
