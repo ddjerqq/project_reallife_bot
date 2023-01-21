@@ -16,7 +16,7 @@ class PersistentView(discord.ui.View):
 
     @discord.ui.button(label="ვერიფიკაცია", style=discord.ButtonStyle.green, custom_id="verification")
     async def green(self, inter: discord.Interaction, _button: discord.ui.Button):
-        await inter.response.send_message("ვერიფიკაცია გავლილია", ephemeral=True)
+        await inter.response.send_message("თქვენ წარმატებით გაიარეთ ვერიფიკაცია", ephemeral=True)
         # member role is added here
         # this role is from project real life `Member` role
         role = inter.guild.get_role(738831368196456568)
