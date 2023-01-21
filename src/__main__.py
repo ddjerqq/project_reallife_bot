@@ -70,7 +70,7 @@ async def verification(ctx: commands.Context):
 
     em = discord.Embed(
         title="როლის მიღება",
-        description="იმისათვის რომ გამოიყენოთ ჩვენი სერვერი სრული ფუნქციონალი, გაიარეთ ვერიფიკაცია.",
+        description="იმისათვის რომ გამოიყენოთ ჩვენი დისქორდ სერვერის სრული ფუნქციონალი, გაიარეთ ვერიფიკაცია.",
         color=0x2D60CC,
     )
     em.set_thumbnail(url="https://i.imgur.com/YctJGwP.png")
